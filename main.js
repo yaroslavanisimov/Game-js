@@ -10,6 +10,8 @@ const score = document.querySelector('.score'),
 // div - car element creation
 	btns = document.querySelectorAll('.btn');
 
+const gameMenu = document.querySelector('.gameMenu')
+
 const music = new Audio('audio.mp3');
 
 
@@ -42,6 +44,12 @@ const setting = {
 
 let startSpeed = 0;
 
+const setEndText = (show) => {
+	const endText = document.getElementById('endText');
+	endText.className = show ? 'gameText' : 'gameTextHidden'
+}
+// Crash "looser" text show
+
 const changeLevel = (lvl) => {
 
 	switch (lvl) {
@@ -73,21 +81,14 @@ function getQuantityElements(heightElement) {
 
 const getRandomEnemy = (max) => Math.floor((Math.random() * max) + 1);
 
-function startGame(event) {
-	const target = event.target;
-
-	if (!target.classList.contains('btn')) return;
-
-	music.play();
-
-	const levelGame = target.dataset.levelGame;
-
+function startGame(levelGame) {
+	//music.play();
 	changeLevel(levelGame);
-
+	setEndText(false);
 	btns.forEach(btn => btn.disabled = true);
 
-	gameArea.style.minHeight = Math.floor((document.documentElement.clientHeight - HEIGHT_ELEM) / HEIGHT_ELEM) *
-		HEIGHT_ELEM;
+	// gameArea.style.minHeight = Math.floor((document.documentElement.clientHeight - HEIGHT_ELEM) / HEIGHT_ELEM) *
+	// 	HEIGHT_ELEM;
 
 	start.classList.add('hide');
 // hide start after input
@@ -271,10 +272,13 @@ function moveEnemy() {
 // взаимодействуют друг с другом и тогда мы предполагаем столкновение - когда элементы наезжают друг на друга
 			setting.start = false;
 // когда Старт = true , значит окгда Стоп = false -> условие ниже
-			if (setting.score > setting.record) {
+			if (setting.score > setting.record || true) {
 				localStorage.setItem('best-record', setting.score);
-				alert(`Ура новый рекорд вы набрали на ${setting.score - setting.record} очков больше!`);
+				//alert(`Ура новый рекорд вы набрали на ${setting.score - setting.record} очков больше!`);
+				setEndText(true);
 				setting.record = setting.score;
+			} else {
+				//gameMenu.innerHTML = `<div>Your score is ${setting.score}</div>`
 			}
 			start.classList.remove('hide');
 // remove - убираем очки после столкновения
@@ -296,10 +300,18 @@ function moveEnemy() {
 }
 
 
-
-
-start.addEventListener('click', startGame);
 // start event
 document.addEventListener('keydown', startRun);
 document.addEventListener('keyup', stopRun);
 // событие нажатия и отпускания кнопки
+
+
+const addButtonsEvents = () => {
+	for(let i = 1; i<=btns.length; i++){
+		btns[i-1].addEventListener('click', () => {
+			startGame(i)
+		})
+	}
+}
+
+addButtonsEvents();
