@@ -59,6 +59,7 @@ table {
 .game {
     height: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .start {
@@ -118,18 +119,15 @@ table {
     bottom: 10px;
 }
 
-
-
 .gameArea {
     width: 300px;
     position: relative;
     margin: auto;
     background: #222;
     overflow: hidden;
+    max-height: calc(100vh - 400px);
+    min-height: 500px;
 }
-
-
-
 
 .line {
     position: absolute;
@@ -148,4 +146,37 @@ table {
     height: 1px !important; 
     width: 1px !important; 
     overflow: hidden;
+}
+
+.title {
+    margin-right: 4px;
+}
+
+@keyframes carAnimation {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+.carWithAnimation {
+    animation-name: carAnimation;
+    animation-duration: 3s;
+}
+
+@keyframes showGameText {
+    from {color: red;}
+    to {color: yellow;}
+}
+
+.gameText {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    font-size: 30px;
+    animation-name: showGameText;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.gameTextHidden {
+    visibility: hidden;
 }
