@@ -75,6 +75,8 @@ table {
     justify-content: center;
     align-items: center;
 }
+/* оформление кнопки начать игру */
+
 
 .btn {
     font: inherit;
@@ -100,6 +102,8 @@ table {
     height: calc(50px - 2rem);
     padding: 1rem;
 }
+/* оформление счета */
+
 
 .btn:not(:last-child) {
     margin-right: 15px;
@@ -114,6 +118,8 @@ table {
     bottom: 10px;
 }
 
+
+
 .gameArea {
     width: 300px;
     position: relative;
@@ -121,6 +127,9 @@ table {
     background: #222;
     overflow: hidden;
 }
+
+
+
 
 .line {
     position: absolute;
