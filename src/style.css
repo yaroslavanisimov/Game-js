@@ -120,7 +120,7 @@ table {
 }
 
 .gameArea {
-    width: 300px;
+    width: 100%;
     position: relative;
     margin: auto;
     background: #222;
@@ -134,7 +134,7 @@ table {
     width: 10px;
     height: calc(var(--height-elem) / 2);
     background: #fff;
-    left: 145px
+    /* left: 145px */
 }
 
 .visually-hidden {
