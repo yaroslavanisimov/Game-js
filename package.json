@@ -1,0 +1,41 @@
+{
+  "name": "NF-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-cli serve --mode development --open",
+    "build": "webpack --mode production",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "repository": {
+    "type": "git",
+    "description": "my app",
+    "url": "git+https://github.com/YaroslavAnisimov/NF-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YaroslavAnisimov/NF-js/issues"
+  },
+  "homepage": "https://github.com/YaroslavAnisimov/NF-js#readme",
+  "devDependencies": {
+    "@popperjs/core": "^2.9.3",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "sass": "^1.37.5",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.0",
+    "firebase": "^8.9.1"
+  }
+}
