@@ -1,7 +1,6 @@
 {
-  "name": "NF-js",
+  "name": "nf",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "start": "webpack-cli serve --mode development --open",
@@ -37,5 +36,6 @@
   "dependencies": {
     "bootstrap": "^5.1.0",
     "firebase": "^8.9.1"
-  }
+  },
+  "description": ""
 }

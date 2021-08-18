@@ -39,10 +39,6 @@ signOut.addEventListener('click', ()=>{
 
 
 
-
-
-const set = document.querySelector('.set')
-const get = document.querySelector('.get')
 const register = document.querySelector('.register')
 const login = document.querySelector('.login')
 
