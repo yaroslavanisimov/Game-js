@@ -71,16 +71,16 @@ const body = {
 
 let idToken =''
 
-set.addEventListener('click', async ()=>{
-	const res = await fetch(`${url}/${body.name}.json?auth=${idToken}`, {
-		method:'PUT',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(body)
-	})
-	const data = await res.json()
-})
+// set.addEventListener('click', async ()=>{
+// 	const res = await fetch(`${url}/${body.name}.json?auth=${idToken}`, {
+// 		method:'PUT',
+// 		headers: {
+// 			'Content-Type': 'application/json'
+// 		},
+// 		body: JSON.stringify(body)
+// 	})
+// 	const data = await res.json()
+// })
 
 login.addEventListener('click',async ()=>{
 	const res = await fetch ('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCl5D4V8U8Nic0KxDE9EtoxuuRx2lR4neU', {
